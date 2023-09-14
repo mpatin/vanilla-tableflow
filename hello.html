@@ -1,0 +1,23 @@
+<head>
+  <script src="https://unpkg.com/@tableflow/js@latest/build/index.js"></script>
+</head>
+
+<body>
+  
+  <button id="uploadButton">Open TableFlow Importer</button>
+  
+  <script>
+    const importer = createTableFlowImporter({
+    importerId: "ba9c9c45-a6f9-4c0a-9858-3b4f2913f4d5",
+    onRequestClose: () => importer.close(),
+    onComplete: (data, error) => console.log(data),
+    darkMode: true,
+    });
+  
+    const uploadButton = document.getElementById("uploadButton");
+    uploadButton.addEventListener("click", () => {
+    importer?.showModal();
+    });
+  </script>
+  
+</body>
